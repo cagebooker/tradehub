@@ -1,0 +1,66 @@
+$g1:#f0fdfa;
+$g2:#cafdf3;
+$g3:#96f9e7;
+$g4:#59efd9;
+$g5:#27dac5;
+$g6:#0ebeac;
+$g7:#08998e;
+$g8:#0b756e;
+$g9:#0e615c;
+$g10:#11504d;
+$g11:#033030; 
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+  cursor: pointer;
+}
+@mixin center(){
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sidebar{
+  width: 100px;
+  height: 100%;
+  border: 1px solid red;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  border-radius: 50%;
+  @include size(40px, 40px);
+  z-index: 100;
+  &_hover{
+    border: 1px solid $g6;
+    position: absolute;
+    width: 140px;
+    height: 160px;
+    top: -160px;
+    left: -200px;
+    transition: 0.3s;
+    background-color: $g1;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 2px;
+    &-item{
+      color: $g7;
+      border-radius: 2px;
+      padding: 2px 0px;
+      &:hover{
+        background-color: $g2;
+      }
+    }
+    &-active, &-nailed{
+      left: 0;
+    }
+  }
+  &_nail{
+    color: $g11;
+    position: absolute;
+    left: 60px;
+    @include size(40px, 40px);
+    @include center();
+    border: 1px solid red;
+  }
+}

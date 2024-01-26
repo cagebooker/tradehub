@@ -1,0 +1,18 @@
+@import "./sidebar.scss";
+@import "./tradeRecord.scss";
+
+$g-1:#f0fdfa;
+$g-2:#cafdf3;
+$g-3:#96f9e7;
+$g-4:#59efd9;
+$g-5:#27dac5;
+$g-6:#0ebeac;
+$g-7:#08998e;
+$g-8:#0b756e;
+$g-9:#0e615c;
+$g-10:#11504d;
+$g-11:#033030; 
+
+#root{
+  background: linear-gradient($g-6,$g-2);
+}

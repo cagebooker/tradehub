@@ -1,0 +1,14 @@
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+}
+.tradeRecord{
+  border: 1px solid red;
+  position: absolute;
+  right: 0px;
+  @include size(100%, 100%);
+  transition: 0.3s;
+  &_withSidebar{
+    width: calc(100% - 172px);
+  }
+}
