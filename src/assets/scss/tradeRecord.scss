@@ -1,14 +1,134 @@
+$g1:#f0fdfa;
+$g2:#cafdf3;
+$g3:#96f9e7;
+$g4:#59efd9;
+$g5:#27dac5;
+$g6:#0ebeac;
+$g7:#08998e;
+$g8:#0b756e;
+$g9:#0e615c;
+$g10:#11504d;
+$g11:#033030; 
+$userInfo-width: 300px;
 @mixin size($w, $h){
   width: $w;
   height: $h;
 }
+@mixin shadow(){
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
 .tradeRecord{
-  border: 1px solid red;
+  // border: 1px solid red;
+  background-color: $g1;
+  // background: linear-gradient(to bottom, $g2, $g1);
+  border: 1px solid #dae5e332;
   position: absolute;
-  right: 0px;
+  right: 0;
+  color: $g11;
   @include size(100%, 100%);
   transition: 0.3s;
+  border-radius: 12px;
+  display: flex;
   &_withSidebar{
     width: calc(100% - 172px);
+  }
+  
+  .userInfo{
+    width: $userInfo-width;
+    // border: 1px solid red;
+    padding: 40px 16px 0px 16px;
+    &_user, &_analyze, &_stockList{
+      border: 1px solid burlywood;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    }
+    &_user{
+      height: 200px;
+      border: none !important;
+      
+      font-family: Inter;
+      &-avatar{
+        @include size(74px, 74px);
+        // @include shadow();
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 50% !important;
+        position: relative;
+        left: 50%;
+        // border: 1px solid blue;
+        transform: translateX(-50%);
+        overflow: hidden;
+        position: relative;
+        top: -20px;
+        img{
+          width: 100%;
+        }
+      }
+      &-name{
+        font-weight: 600;
+      }
+      &-title{
+        font-size: 12px;
+        font-weight: 400;
+        color: grey;
+      }
+      &-info{
+        height: 48px;
+        position: relative;
+        top: 14px;
+        display: flex;
+        align-items: center;
+        width: calc(100% - 20px);
+        // border: 1px solid red;
+        left: 10px;
+        &-asset,&-count,&-winRate{
+          // border: 1px solid red;
+          width: 33.3%;
+          height: 100%;
+        }
+        .subtitle{
+          width: 100%;
+          font-size: 12px;
+          font-weight: 600;
+          color: $g9;
+        }
+        .content{
+          font-size: 11px;
+        }
+        &-asset, &-count, &-winRate{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          
+        }
+        &-count{
+
+        }
+        &-winRate{
+
+        }
+      }
+    }
+    &_title{
+      color: $g8;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    &_analyze{
+      height: 300px;
+    }
+    &_stockList{
+    }
+  }
+  .recordList{
+    width: calc(100% - $userInfo-width);
+    // border: 1px solid red;
+    // border: 1px solid red;
+    background-color: #fff;
+    border-radius: 16px 12px 12px 16px;
   }
 }

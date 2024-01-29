@@ -12,7 +12,27 @@ $g-8:#0b756e;
 $g-9:#0e615c;
 $g-10:#11504d;
 $g-11:#033030; 
+$main-padding: 12px;
 
 #root{
-  background: linear-gradient($g-6,$g-2);
+  // background: linear-gradient($g-6,$g-2);
+  // border: 1px solid yellow;
+  padding: 12px;
+  background-color: #fff;
+}
+.main{
+  // background-color: #fff;
+  height: calc(100% - $main-padding*2);
+  width: calc(100% - $main-padding*2);
+  top: $main-padding;
+  left: $main-padding;
+  position: relative;
+  // border: 1px solid green;
+  border-radius: 12px;
+  overflow: hidden;
+  // background-color: $g1;
+  // border: 1px solid $g2;
+  // background: linear-gradient(to bottom, $g11, $g1);
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1), -15px -15px 20px #fff;
+  // box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25);
 }

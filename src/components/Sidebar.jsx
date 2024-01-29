@@ -77,6 +77,7 @@ const Sidebar = () => {
         { sidebarItem.map((item) => (
           <div className="sidebar_hover-item" key={item.id} onClick={()=>navigate(`${item.link}`)}>{item.label}</div>
         )) }
+        <img src="/img/notebook.gif" alt="" />
       </div>
       <div className="sidebar_nail" onClick={()=>{nailSidebar()}}>定住</div>
     </div>
