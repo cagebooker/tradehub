@@ -51,7 +51,29 @@ const TradeRecord = () => {
         <div className="userInfo_title">
           交易分析
         </div>
-        <div className="userInfo_analyze">222</div>
+        <div className="userInfo_analyze">
+          <div className="userInfo_analyze-data">
+            <div className="container">
+              <div className="subtitle">最大交易回落：</div>
+              <div className="content">15.4%</div>
+            </div>
+            <div className="container">
+              <div className="subtitle">時間：</div>
+              <div className="content">32個月</div>
+            </div>
+            <div className="container">
+              <div className="subtitle">交易筆數：</div>
+              <div className="content">132筆</div>
+            </div>
+            <div className="container">
+              <div className="subtitle">每筆交易損益：</div>
+              <div className="content">+4012</div>
+            </div>
+          </div>
+          <div className="img-container">
+            <img src="/img/MDD.png" alt="" />
+          </div>
+        </div>
         <div className="userInfo_stockList">333</div>
       </div>
     )

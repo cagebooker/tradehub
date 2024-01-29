@@ -120,6 +120,12 @@ $userInfo-width: 300px;
     }
     &_analyze{
       height: 300px;
+      .img-container{
+        width: 100%;
+        img{
+          width: 94%;
+        }
+      }
     }
     &_stockList{
     }
