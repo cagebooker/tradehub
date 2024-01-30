@@ -70,6 +70,7 @@ const TradeRecord = () => {
               <div className="content">+4012</div>
             </div>
           </div>
+          <hr />
           <div className="img-container">
             <img src="/img/MDD.png" alt="" />
           </div>

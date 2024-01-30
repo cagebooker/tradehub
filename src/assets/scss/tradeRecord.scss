@@ -9,7 +9,7 @@ $g8:#0b756e;
 $g9:#0e615c;
 $g10:#11504d;
 $g11:#033030; 
-$userInfo-width: 300px;
+$userInfo-width: 30%;
 @mixin size($w, $h){
   width: $w;
   height: $h;
@@ -89,12 +89,12 @@ $userInfo-width: 300px;
         }
         .subtitle{
           width: 100%;
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 600;
           color: $g9;
         }
         .content{
-          font-size: 11px;
+          font-size: 14px;
         }
         &-asset, &-count, &-winRate{
           display: flex;
@@ -112,20 +112,45 @@ $userInfo-width: 300px;
       }
     }
     &_title{
-      color: $g8;
+      color: $g10;
       text-align: left;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       margin-bottom: 8px;
+      font-family: Inter;
     }
     &_analyze{
-      height: 300px;
+      // height: 300px;
+      padding: 10px 14px;
       .img-container{
         width: 100%;
         img{
           width: 94%;
         }
       }
+      hr{
+        border-color: $g2;
+      }
+      &-data{
+        // border: 1px solid green;
+        display: flex;
+        flex-wrap: wrap;
+        .container{
+          // border: 1px solid red;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          height: 32px;
+          .subtitle, .content{
+            display: inline-block;
+          }
+          .subtitle{
+            color: $g8;
+            font-weight: 600;
+          }
+        }
+      }
+      
     }
     &_stockList{
     }
