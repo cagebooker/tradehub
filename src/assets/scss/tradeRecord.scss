@@ -9,13 +9,27 @@ $g8:#0b756e;
 $g9:#0e615c;
 $g10:#11504d;
 $g11:#033030; 
-$userInfo-width: 30%;
+$gray: #C6C6C6;
+$userInfo-width: 24%;
 @mixin size($w, $h){
   width: $w;
   height: $h;
 }
 @mixin shadow(){
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+@mixin formatBtn(){
+  background-color: transparent;
+  border: 1px solid $gray;
+  border-radius: 6px;
+  color: #202020;
+  padding: 0px 12px;
+  width: 80px;
+  font-family: sans-serif;
+  &:focus{
+    outline: none;
+    // border-color: $g8;
+  }
 }
 .tradeRecord{
   // border: 1px solid red;
@@ -33,12 +47,13 @@ $userInfo-width: 30%;
     width: calc(100% - 172px);
   }
   
+  //@ 左側用戶資料
   .userInfo{
     width: $userInfo-width;
     // border: 1px solid red;
-    padding: 40px 16px 0px 16px;
+    padding: 40px 24px 0px 24px;
     &_user, &_analyze, &_stockList{
-      border: 1px solid burlywood;
+      // border: 1px solid burlywood;
       margin-bottom: 20px;
       border-radius: 20px;
       background-color: #fff;
@@ -147,6 +162,9 @@ $userInfo-width: 30%;
           .subtitle{
             color: $g8;
             font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }
@@ -155,11 +173,92 @@ $userInfo-width: 30%;
     &_stockList{
     }
   }
+  //@ 右側表單區
   .recordList{
     width: calc(100% - $userInfo-width);
     // border: 1px solid red;
-    // border: 1px solid red;
     background-color: #fff;
     border-radius: 16px 12px 12px 16px;
+    padding: 16px 28px;
+    text-align: left;
+    font-family: Inter;
+    overflow: scroll;
+    &_title{
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    &_filterBar{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-items{
+        display: flex;
+        gap: 10px;
+      }
+      &-item{
+        .input{
+          background-color: transparent;
+          border: 1px solid $gray;
+          height: 32px;
+          border-radius: 6px;
+          color: #000;
+          padding: 0px 12px;
+          width: 100px;
+          &:focus{
+            outline: none;
+            border-color: $g8;
+          }
+        }
+        &-title{
+          color: gray;
+          font-weight: bold;
+          font-size: 16px;
+          margin-bottom: 4px;
+        }
+        .ant-picker-active-bar{
+          background: $g7 !important;
+        }
+      }
+      &-btn{
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        color: #444444;
+        border-color: $gray;
+        letter-spacing: 0.1em;
+        @include formatBtn();
+      }
+    }
+    &_list{
+      margin-top: 20px;
+      overflow: scroll;
+      //@ 客製化 table
+      .ant-table-cell{
+        font-size: 12px !important;
+      }
+      .ant-input{
+        padding: 0px !important;
+        padding-left: 2px !important;
+        border: none !important;
+        border-bottom: 1px solid black;
+      }
+      .ant-table{
+        &-thead{
+          .ant-table-cell{
+            text-align: center;
+          }
+        }
+        &-tbody{
+          .ant-table-row{
+            .ant-table-cell:nth-child(1){
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
   }
 }
